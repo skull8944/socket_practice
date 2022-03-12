@@ -1,0 +1,21 @@
+{
+  "name": "socket_practice",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec \"npm test\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "expect": "^27.5.1",
+    "mocha": "^9.2.1"
+  },
+  "dependencies": {
+    "moment": "^2.29.1",
+    "mustache": "^4.2.0"
+  }
+}
