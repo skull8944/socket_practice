@@ -1,6 +1,6 @@
 const socket  = io();
 
-const scrollToBotton = () => {
+const scrollToBottom = () => {
     var messages = document.querySelector('#messages').lastElementChild;
     messages.scrollIntoView();
 }
@@ -33,7 +33,7 @@ socket.on('updateUsersList', (users) => {
     });
   
     let usersList = document.querySelector('#users');
-    usersList.innerHTML = "";
+    usersList.innerHTML = ""; //清空users換新的users
     usersList.appendChild(ol);
 });
 
@@ -49,13 +49,7 @@ socket.on('newMessage', (message) => {
 
     div.innerHTML = html
     document.querySelector('#messages').appendChild(div);
-    scrollToBotton();
-
-    // console.log("newMessage", message);
-    // var li = document.createElement('li');
-    // li.innerText = `${message.from} ${formattedTime}: ${message.text}`;
-
-    // document.querySelector('body').appendChild(li);
+    scrollToBottom();
 });
 
 socket.on('newLocationMessage', (message) => {
@@ -70,17 +64,7 @@ socket.on('newLocationMessage', (message) => {
 
     div.innerHTML = html
     document.querySelector('#messages').appendChild(div);
-
-    // console.log("newLocationMessage", message);
-    // var li = document.createElement('li');
-    // var a = document.createElement('a');
-    // a.setAttribute('target', '_blank');
-    // a.setAttribute('href', message.url);
-    // a.innerText = 'My Current Location'
-    // li.innerText = `${message.from} ${formattedTime}: `;
-    // li.appendChild(a);
-
-    // document.querySelector('body').appendChild(li);
+    scrollToBottom
 });
 
 document.querySelector('#submit-btn').addEventListener(
